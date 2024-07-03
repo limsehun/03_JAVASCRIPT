@@ -69,7 +69,43 @@ function check1() {
 
 
 
+  /* 복합 기호에서 등호(=)는 무조건 오른쪽!!!! */
 
-
-   
 }
+
+
+
+/** 홀/짝 판별 함수 */
+function oddEvenCheck(){
+  const input1 = document.getElementById("input1");
+
+// #input1 요소에 작성되 값을 얻어와 
+  // Number()를 이용해 숫자로 변환 후
+  // value 변수에 대입(저장)
+  const value = Number(input1.value);
+
+  //2로 나눴을 때 나머지가 0 === 짝수(2의 배수)
+  //2로 나눴을 때 나머지가 1이 아닌 경우 === 짝수(2의 배수)
+  
+  //2로 나눴을 때 나머지가 1 === 홀수
+  //2로 나눴을 때 나머지가 0이 아닌 경우 === 홀수
+
+  console.log(`${value}은/는 짝수 : ${value % 2===0}`);
+  console.log(`${value}은/는 홀수 : ${value % 2!==0}`);
+}
+
+/**배수확인함수 */
+function multipleCheck() {
+    
+    const input2 = document.getElementById("input2");
+    const input3 = document.getElementById("input3");
+    const result2 = document.getElementById("result2");
+
+    const num2 = Number(input2.value); //입력값 숫자로 변환
+    const num3 = Number(input3.value); //입력값 숫자로 변환
+
+
+    //10은  5의배수? -> 10을 5로 나눴을때 나머지가 0인지 확인
+    result2.innerText = num2 % num3 == 0; 
+}
+
