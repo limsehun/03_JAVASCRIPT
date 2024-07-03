@@ -109,3 +109,65 @@ function multipleCheck() {
     result2.innerText = num2 % num3 == 0; 
 }
 
+/* 복합 대입 연산자 확인 */
+function compoundCheck(){
+    let number = 100;
+    console.log(`number : ${number}`);
+  
+    number += 20; // number = number + 20; 
+    console.log(`number += 20 : ${number}`); // 120
+  
+    number -= 60; // number = number - 60;
+    console.log(`number -= 60 : ${number}`); // 60
+  
+    number *= 3; // number = number * 3;
+    console.log(`number *= 3 : ${number}`); // 180
+  
+    number /= 10; // number = number / 10;
+    console.log(`number /= 10 : ${number}`); // 18
+
+    number %=5; // number = number % 5;
+    console.log(`number%=5 : ${number}`) //3
+  
+}
+
+/* 
+  AND(&&) : 둘다 true인 경우에만 true (나머진 false)
+  or(||) : 둘다 false일 경우에만 false (나머진 true)
+ */
+
+/**AND연산자 확인 */
+function andCheck() {
+    
+    //104는 100이상의 숫자 이면서 짝수인가?
+    const bool1= (104>=100)&&(104%2===0);
+
+    console.log(`104는 100이상의 숫자 이면서 짝수인가?${bool1}`)
+
+    // 50은 70이하의 숫자이고, 4의 배수가 맞는가?
+
+    const bool2= (50<=70)&&(50%4===0);
+
+    console.log(`50은 70이하의 숫자이고, 4의 배수가 맞는가?${bool2}`)
+  
+  // 13은 1부터 10 사이의 숫자가 맞는가?
+
+    const bool3= (13>=1)&&(13<=10);
+
+    console.log(`13은 1부터 10 사이의 숫자가 맞는가?${bool3}`)
+
+}
+
+/** or연산자 확인 */
+function orCheck() {
+    const bool1 = (4>10)||(4%2===0) //true
+    console.log(`4는 10을 초과하거나 짝수인가?${bool1}`)
+
+    const name = "홍길동";
+    const age  = 20;
+    
+    // 나이가 18세 미만 이거나, 이름이 "김길동"인가?
+    const bool2 = (age<18)||(name==="김길동") //true
+    console.log(`나이가 18세 미만 이거나, 이름이 "김길동"인가?${bool2}`)
+  
+}

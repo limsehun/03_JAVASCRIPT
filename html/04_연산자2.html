@@ -68,7 +68,74 @@
         temp += 5; // temp = temp + 5;
  
     </pre>
+    <button onclick="compoundCheck()">복합 대입 확인</button>
 
+
+    <hr>
+  
+    <h1>논리 연산자( &&, ||, ! )</h1>
+
+  <!-- 
+    & : 앰퍼센트
+    | : 버티칼바
+    ! : Not(낫)
+  -->
+  <pre>
+
+    && (AND) 연산자  ->   A && B
+
+    - A와 B 모두 true일 경우에만
+      A && B 결과가 true인 연산자 (나머진 false)
+
+    -글/말/문장에서
+    ~와, 그리고(이고), 이면서(면서), ~까지, ~부터, ~사이
+    라는 글귀가 있으면 AND 연산을 작성
+
+    ex) 104는 100이상의 숫자 이면서 짝수인가?
+        -> 104>=100     &&     104 % 2 == 0  -> true
+
+
+  </pre>
+
+  <button onclick="andCheck()">AND연산</button>
+
+  <hr>
+
+  <pre>
+    ||(OR 연산자) -> A||B
+
+    -A와 B 모두 false일 경우에만 false (나머진 true)
+
+    -문장에 
+    또는, ~이거나(거나)
+    글귀가 있으면 OR연산을 수행
+    ex) 4는 10을 초과하거나 짝수인가?
+    -> (4>10)||(4%2===0)
+  </pre>
+
+  <button onclick="orCheck()">OR연산자 확인</button>
+
+  <hr>
+  <pre>
+    !(NOT) 연산
+    -논리값을 반대로 바꾸는 연산자
+
+    !true  -> false
+    !false -> true
+
+    ex)
+    !(true && false) -> true
+
+    (10>5)||!(10%2===0)-> true
+
+    !!!true->false
+
+
+
+
+
+
+  </pre>
 
     <script src="../js/04_연산자2.js"></script>
 </body>
