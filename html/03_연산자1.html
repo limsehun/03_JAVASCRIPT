@@ -86,6 +86,34 @@
         </div>
     </div>
 
+    <hr>
+
+    <h3>증가/감소 연산자(++,--)</h3>
+    <pre>
+        -1씩 값을 증가/감소 시키는 연산자
+
+        -합쳐서 "증감연산자" 라고 부르기도 함
+
+        -단항 연산자 중 한 종류
+
+        (산술 연산자는 2항 연산자)
+
+        *전위연산(제일 먼저 1을 증가/감소 시키기) ->++변수명 / --변수명
+
+        *후위연산(제일 나중에 1을 증가/ 감소 시키기)->변수명++ / 변수명--
+    </pre>
+
+    <div>
+        <button onclick="decrease()">-1</button>
+        <span id="result">0</span>
+        <button onclick="increase()">+1</button>
+      </div>
+
+      <h3>전위/후위 연산 확인하기</h3>
+  <button onclick="checkFn()">console에서 확인하기</button>
+
+    
+
 
 
     <script src="../js/03_연산자1.js"></script>

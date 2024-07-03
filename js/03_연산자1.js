@@ -156,3 +156,76 @@ function allOperationFn(){
   calcResult2.innerHTML=result;
   
 }
+
+//---------------------------------------------------
+
+//1씩 증가/감소한 결과를 출력할 요소 얻어오기
+const result = document.getElementById("result");
+
+//0을 기준으로 증가, 감소할 값을 저장할 변수
+let count = 0;
+
+/**1씩 감소하는 함수(decrease : 감소하다) */
+function decrease(){
+    count--; // 또는 --count;  -> count 변수 값을 1 감소
+             // count = count - 1;
+    
+    // 감소한 값을 id가 result인 요소의 내용(innerText)로 대입
+    result.innerText = count; 
+}
+/**1씩 증가하는 함수 (increase : 증가하다)*/
+function increase(){
+    count++; // 또는 ++count  ->  count 변수 값을 1 증가
+             // count = count + 1;
+    
+    // 증가한 값을 id가 result인 요소의 내용(innerText)로 대입
+    result.innerText = count;     
+}
+
+
+/* 전위/후위 연산 확인하기 */
+function checkFn(){
+
+    //컴퓨터한테 연산은 +-*/같은 기호를 해석하는 것 뿐 만이 아니라 코드/값을 읽고, 실행하는 것도 연산이다
+
+    // 전위연산(++변수명,--변수명) - 다른 어떤 연산 보다도 우선 실행
+
+    let num = 100;
+
+    console.log("++num :", ++num);
+
+    console.log("")
+
+    // 후위 연산(++변수명,--변수명) - 다른 어떤 연산 보다도 나중에 실행
+
+
+
+    num = 100;
+
+    console.log("num++ : ",num++); //100출력->num1증가(101)
+    console.log("현재 num:", num);//101
+
+    console.log("num++ : ",num++); //101출력 후 num1증가(102)
+    console.log("num++ : ",num++); //102출력 후 num1증가(103)
+
+    console.log("num--:",num--); //103출력 후 num1감소(102)
+    console.log("num--:",num--); //102출력 후 num1감소(101)
+    console.log("num--:",num--); //101출력 후 num1감소(100)
+
+    console.log("num:",num); //100
+
+
+    // 증감 연산자 문제
+  let a  = 10;
+  let b  = 5;
+  let c  = ++a * b--;
+
+  // 최종 a,b,c 값은?
+  // a : 11
+  // b : 4
+  // c : 55
+
+  console.log(a,b,c);
+
+
+}
