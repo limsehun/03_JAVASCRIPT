@@ -15,7 +15,10 @@
 // input1 id를 가지는 요소를 얻어와 
 // number1 변수(상수)에 저장
 const number1 = document.getElementById('input1');
+
 const number2 = document.getElementById('input2');
+
+const calcResult = document.getElementById("calcResult")
 
 
 /* 
@@ -27,4 +30,129 @@ function plusFn(){
   // 입력값을 숫자(number)로 변환해서 v1변수에 저장
   const v1 = Number(number1.value);
   const v2 = Number(number2.value);
+
+
+console.log("두 수의 합 : ", v1 + v2); 
+
+//v1+v2결과 값을
+//calcResult 요소의 내용(innerText)로 대입(=)
+calcResult.innerText = v1 + v2;
+}
+
+/* 빼기 함수 */
+function minusFn(){
+
+    //Number('숫자만 작성돤 문자열')->숫자(number)로 치환
+
+    const v1 = Number(number1.value);
+    const v2 = Number(number2.value);
+
+    //id가 calcResult인 요소의 내부 내용으로 v1-v2결과 대입
+    calcResult.innerText = v1 - v2;
+}
+
+/** 곱하기 함수 */
+function multiFn(){
+    const v1 = Number(number1.value);
+    const v2 = Number(number2.value);
+
+    calcResult.innerText = v1 * v2;
+
+
+}
+
+/** 나누기 함수 */
+function divFn(){
+    const v1 = Number(number1.value);
+    const v2 = Number(number2.value);
+
+    calcResult.innerText = v1 / v2;
+
+
+}
+
+/** 나머지 함수 */
+function modFn(){
+    const v1 = Number(number1.value);
+    const v2 = Number(number2.value);
+
+    calcResult.innerText = v1 % v2;
+
+  
+}
+
+// ----------------------------------------
+/* 산술 연산 응용 */
+const in1 = document.getElementById("in1"); // 1번 input
+const in2 = document.getElementById("in2"); // 2번 input
+const calcResult2 = document.getElementById("calcResult2"); // 결과
+
+/** 첫 번째 값 X2 */
+function doubleFn(){
+  const v1 = Number(in1.value);
+  calcResult2.innerText = v1 * 2;
+}
+
+/** 두 번째 값 제곱 */
+function squareFn(){
+  const v2 = Number(in2.value);
+  calcResult2.innerText = v2 * v2;
+}
+
+/** 전체 산술 연산 결과 출력 */
+/* 
+  숫자 + 숫자 = 숫자
+  문자 + 문자 = 이어쓰기
+  숫자 + 문자 = 이어쓰기
+
+  숫자, 문자 혼용된 산술 연산식 에서
+  사칙 연산 우선순위를 따른다!!
+  
+  - 1순위 : *, /, %
+  - 2순위 : +, -
+
+  * innerText : 대입된 글자(Text) 그대로 출력
+
+  요소.innerText = "결과<br>100";
+  -> 화면에 "결과<br>100" 그대로 출력
+
+  -------------------------
+
+  * innerHTML : 대입된 글자에 포함되어있는
+  HTML 태그를 해석해서 출력
+
+  요소.innerHTML = "결과<br>100";
+  -> 결과
+     100    
+     형태로 출력됨
+*/
+
+/** 전체 산술 연산 결과 출력 */
+function allOperationFn(){
+    const v1 =Number(in1.value);
+    const v2 =Number(in2.value);
+
+    // 각각의 연산 결과를 별도의 변수에 저장
+  const plus  = v1 + v2;
+  const minus = v1 - v2;
+  const multi = v1 * v2;
+  const div   = v1 / v2;
+  const mod   = v1 % v2;
+
+  //태그가 포함된 결과 문자열 만들기
+  const result =
+  "<ul>"
+  +"<li>+ 결과 : " + plus + "</li>"
+  +"<li>- 결과 : " + minus + "</li>"
+  +"<li>* 결과 : " + multi + "</li>"
+  +"<li>/ 결과 : " + div + "</li>"
+  +"<li>% 결과 : " + mod + "</li>"
+  +"</ul>"
+  ;
+
+  // 태그가 포함된 문자열을
+  // id가 calcResult2인 요소에 
+  // 태그가 해석되는 형태(innerHTML)로 대입
+  calcResult2.innerHTML=result;
+  
 }
