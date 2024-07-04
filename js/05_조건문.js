@@ -64,10 +64,35 @@ function check3(){
     result = "음수";
   }
 
-  //양수도 음수도 아닌 ㄴ경우
+  //양수도 음수도 아닌 경우
   else{
     result="0";
   }
 
   alert(`${value}은/는 ${result} 입니다.`);
+}
+
+function ageCheck(){
+    const inputAge = document.getElementById("inputAge");
+  
+    const value = Number(inputAge.value);
+  
+    let result;
+
+    if((value>=0)&&(value<=13)){
+        result = "어린이"
+    }
+
+    else if((value>=14)&&(value<=19)){
+        result = "청소년"
+    }
+
+    else if((value>=20)&&(value<=120)){
+        result = "성인"
+    }
+
+    else{
+        result = "잘못입력한 바보"};
+
+    alert(`너님은 ${result}입니다.`);
 }
