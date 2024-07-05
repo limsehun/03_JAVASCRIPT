@@ -60,3 +60,72 @@ function check6(){
       console.log(num);
     }
   }
+
+  //1부터 20까지 4의 배수만 출력하고 합계를 구하기
+  function check8() {
+
+    let sum = 0; //합계 저장용 변수 
+
+    for (let num=1; num<=20;num++) {
+      if (num % 4 === 0){
+         console.log(num);
+         sum+= num;//합계누적
+      }
+    }
+    console.log("합계: ",sum);
+  }
+
+  
+/**입력 받은 범위 내 지정된 배수 출력 / 합계 구하기 */
+function check9(){
+
+  // 기능 수행에 필요한 요소들 모두 얻어오기
+  const start    = document.getElementById("start9");
+  const end      = document.getElementById("end9");
+  const multiple = document.getElementById("multiple9");
+
+  // input 요소에 작성된 값을 얻어와 숫자로 변환해서 저장
+  const s = Number(start.value);
+  const e = Number(end.value);
+  const m = Number(multiple.value);
+
+  let sum = 0; // 합계저장용
+
+  for(let num = s;num<=e;num++){
+
+    if(num%m===0){//지정배수(m)가맞을경우
+      console.log(num);
+      sum+=num;
+
+    }
+  }
+
+  console.log("합계 : ", sum);
+
+}
+
+
+/** 입력 받은 단(2~9)의 구구단 출력하기 */
+function check10(){
+
+  // dan이 입력되는 요소 얻어오기
+  const input = document.getElementById("dan10");
+
+  //
+  if (input.value.lenght===0) {
+    alert("단을 입력해");
+    return;
+  }
+  //단이2~9사이가 아닐경우
+  const dan = Number(input.value);
+
+  if(dan<2||dan>9){
+    alert('2에서9사이로 입력');
+    return;
+  }
+
+//구구단 출력
+for (let num = 1; num <=9;num++){
+  console.log(`${dan}X${num}=${dan*num}`);
+}
+}
