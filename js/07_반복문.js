@@ -334,10 +334,77 @@ function check23(){
 
   let value;
   // 입력된 숫자가 0이 아니면 반복
-  while( value = Number(prompt("숫자 입력")) != 0 ){
+  while( (value = Number(prompt("숫자 입력"))) != 0 ){
     sum += value; // 누적
   }
 
   alert(`합계 : ${sum}`);
 
 }
+
+/**메뉴주문하기 */
+function check24() {
+  
+  //메뉴 가격을 저장한 변수 선언
+  const gimbap = 4000;
+  const ramen = 4500;
+  const donkkaseu = 9000;
+  
+  //주문 갯수 카운트
+  let gimbapCount    = 0; // 김밥 주문 개수 카운트하는 변수
+  let ramenCount     = 0; // 라면
+  let donkkaseuCount = 0; // 돈까스
+
+  //prompt에 입력된 값을 저장할 변수
+  let input; //undefined
+
+ // input이 undefiend이기 때문에
+  // while문 첫 반복은 무조건 수행됨!!
+  
+  while (input!==null) {//input이 null이 아니면 반복
+
+    // prompt -> 확인 : 작성한 값 반환
+    // prompt -> 취소 : null
+    // ->취소 선택시 while문 다음반복수행 X
+    input = prompt("메뉴 번호 입력");
+
+    // input 값에 따라서 알맞는 case 수행
+    switch(input){
+      case'1':gimbapCount++; break;
+      case'2':ramenCount++; break;
+      case'3':donkkaseuCount++; break;
+      case null : alert("주문완료"); break;
+      default : alert("메뉴에 작성된 번호만 입력해주세요")
+    }
+  
+    
+  } //while end
+
+  let html =''; // 화면에 출력될 html 코드를 저장할 변수
+
+  if(gimbapCount > 0){
+    html += `<li>김밥(${gimbapCount}개) : ${gimbapCount * gimbap}원</li>`;
+  }
+
+  if(ramenCount > 0){
+    html += `<li>라면(${ramenCount}개) : ${ramenCount * ramen}원</li>`;
+  }
+
+  if(donkkaseuCount > 0){
+    html += `<li>돈까스(${donkkaseuCount}개) : ${donkkaseuCount * donkkaseu}원</li>`;
+  }
+
+  // 주문한 메뉴 합계 저장
+  const sum = (gimbapCount * gimbap)
+              + (ramenCount * ramen) 
+              + (donkkaseuCount * donkkaseu);
+
+  html += `<li>합계 : ${sum}원</li>`;
+
+
+  // id가 "result24"인 요소에 내용으로 html 변수 값 추가
+  // + HTML 태그 해석
+  document.getElementById("result24").innerHTML = html;
+}
+
+/**ap */
