@@ -129,3 +129,63 @@ for (let num = 1; num <=9;num++){
   console.log(`${dan}X${num}=${dan*num}`);
 }
 }
+
+function check11() {
+  for(let num = 10; num>0 ;num--){
+    console.log(num);
+  }  
+}
+
+function check12(){
+  const input = document.getElementById("dan12");
+
+  if (input.value.lenght===0) {
+    alert("단을 입력해");
+    return;
+  }
+
+  const dan = Number(input.value);
+
+  if(dan<2||dan>9){
+    alert('2에서9사이로 입력');
+    return;
+  }
+  for (let num = 9; num >=1;num--){
+    console.log(`${dan}X${num}=${dan*num}`);
+  }
+}
+
+
+/** 특정 배수 마다 지정된 모양으로 출력하기 */
+function check13(){
+
+  // 기능 수행에 필요한 요소 모두 얻어오기
+  const input=document.getElementById("input13");
+  const output=document.getElementById("output13");
+  const result=document.getElementById("result13");
+
+  //배수
+  const multiple=Number(input.value);
+
+  //출력
+  const shape=output.value;
+
+  let str=''; //출력된 문자열을 저장할 변수
+
+  //1~20까지 1씩 증가하는 반복문
+  for (let num = 1; num <= 20; num++){
+     // 현재 반복되는 숫자가 multiple의 배수인 경우
+    if(num%multiple===0){
+      //console.log(shape);
+      str+=`${shape} `; 
+    } else { // 배수가 아니면 현재 반복 숫자 출력
+      //console.log(num);
+     str+=`${num} `;
+    }
+    //num===10인 경우 줄을 변경<br>을 추가
+    if(num===10) str+="<br>"; //한 줄인 경우 {}생략가능
+   }
+  //화면에 결과 출력
+  result.innerHTML=str;
+
+  }

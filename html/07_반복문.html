@@ -89,6 +89,40 @@
   </pre>
   단 입력 : <input type="number"id="dan10">
   <button onclick="check10()">구구단 출력</button>
+
+  <h4>10부터 1까지 1씩 감소하며 출력 </h4>
+  <button onclick="check11()">확인11</button>
+
+  <h4>입력받은 단 거꾸로 출력</h4>
+  단 입력 : <input type="number"id="dan12">
+  <button onclick="check12()">구구단 출력</button>
+
+  <h4>특정 배수마다 지정된 모양으로 출력하기</h4>
+
+  <pre>
+    -1~20, 1씩 증가하는 반복문
+    한 줄당 숫자 10개씩만
+
+    hint. innerHTML사용
+            ->대입되는 HTML태그 해석
+
+    [출력화면]
+    배수지정 : 5
+    출력모양 : @
+
+    1234@6789@11 12 13 14 @ 16 17 18 19 @
+  </pre>
+
+  <div>
+    배수지정 : <input type="number"id="input13">
+    <br>
+    출력모양 : <input type="text"id=output13>
+    <br>
+    <button onclick="check13()">출력하기</button>
+
+    <!--결과출력-->
+    <p id="result13"></p>
+  </div>
   
 
     <script src="../js/07_반복문.js"></script>
