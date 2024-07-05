@@ -189,3 +189,155 @@ function check13(){
   result.innerHTML=str;
 
   }
+
+  function check14(){
+  for (let row = 1; row <=3; row++){
+    let str = '';//한 행에 출력될 문자열 을 저장할 변수
+    //1행마다4번 반복
+    for(let col = 1; col<=4; col++){
+      str+=col;
+    }
+    //안쪽for문 반복결과 출력
+    console.log(str);
+    console.log("-------------------------")
+  }
+}
+
+  /* 
+  12345
+  12345
+  12345
+  12345 
+*/
+function check15(){
+
+  for(let row = 0 ; row < 4 ; row++){ // 4행 반복
+
+    let str = '';
+
+    for(let col = 0 ; col < 5 ; col++){ // 5열 반복
+      str += (col + 1); // 12345
+    }
+    console.log(str);
+  }
+}
+
+
+function check16() {
+  for(let row=0 ; row<3 ; row++){ // 0,1,2 3회 반복
+
+    let str = '';
+    for(let col=6 ; col >=1 ; col--){
+      str += col;
+    }
+    console.log(str);
+  }
+}
+
+function check17() {
+  for (let row = 1; row <= 4; row++) {
+    let str = ''; 
+    for(let col=1 ; col <=row ; col++){
+      str += col;
+    }
+    console.log(str);
+  }
+  
+}
+
+function check18() {
+  for (let row = 1; row <= 4; row++) {
+    let str = ''; 
+    for(let col= 1 ; col <=row ; col++){
+      str += '*';
+    }
+    console.log(str);
+  }
+  
+}
+
+/*function check19() {
+  for (let row = 1; row <= 5; row++) {
+    let str = ''; 
+    for(let col=row ; col <= 5; col++){
+      str += col;
+    }
+    console.log(str);
+  }
+}*/
+
+function check19(){
+
+  for(let row = 5 ; row >= 1 ; row--){
+
+    let str='';
+    for(let col = 1 ; col <= row ; col++){
+      str += col;
+    }
+    console.log(str);
+  }
+
+}
+
+  
+  
+/**1부터 30 사이의 정수 중 4의 배수의 개수 구하기 */
+function check20(){
+  let count =0; //배수를 세기위한 변수
+
+  for(let num = 1 ; num <= 30 ; num++){
+    if (num % 4 ===0/*4의 배수인 경우*/) {
+      count++; //count1증가
+    }
+  }
+  alert(`count:${count}`)
+}
+
+
+function check21(){
+  let count =0;
+  const input = document.getElementById("input21");
+  const value = Number(input.value);
+
+  for(let num = 1 ; num <= 100 ; num++){
+    if (num % value ===0/*4의 배수인 경우*/) {
+      count++; //count1증가
+    }
+  }
+  alert(`count:${count}`)
+}
+
+function check22(){
+
+  let count =1;
+
+  // 3행 4열 - 2중 for문
+
+  for(let row = 1 ; row <= 3 ; row++){
+
+    let str = '';
+    for(let col = 1 ; col <= 4 ; col++ ){
+      //str += count;//count값 대입
+      //count++//count값 1증가
+      str+=count++; //==위 두 줄
+    }
+    console.log(str);
+
+  }
+}
+
+/* while */
+/** 0이 입력될 때 까지 입력된 값 누적하기 */
+function check23(){
+
+  let sum = 0; // 누적용 변수
+
+  let value;
+  // 입력된 숫자가 0이 아니면 반복
+  while( value = Number(prompt("숫자 입력")) != 0 ){
+    sum += value; // 누적
+  }
+
+  alert(`합계 : ${sum}`);
+
+}
