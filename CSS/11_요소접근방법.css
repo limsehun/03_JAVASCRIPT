@@ -3,3 +3,11 @@
     height: 50px;
     border: 1px solid black;
 }
+
+.flex-container{
+    display: flex;
+}
+
+.direction-column{
+    flex-direction: column;
+}
