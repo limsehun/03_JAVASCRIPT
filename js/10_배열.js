@@ -204,3 +204,94 @@ function selectMenu(){
   =menus[randomNumber]
 
   }
+
+  /**2차원 배열 확인 1 */
+  function check7() {
+    // 2차원 배열 선언 및 초기화
+    const arr = [
+        /*arr[0]*/[10, 20, 30, 40],
+        /*arr[1]*/[50, 60, 70, 80],
+        /*arr[2]*/[90, 100]
+        ];
+
+    console.log("2차원 배열 arr의 길이(행의 개수) : ", arr.length);
+
+    console.log("arr의 0번째 index의 길이 : ", arr[0].length); //4
+    console.log("arr의 1번째 index의 길이 : ", arr[1].length); //4
+    console.log("arr의 2번째 index의 길이 : ", arr[2].length); //2
+
+    //arr 모든 요소(행)을 for문을 이용해 접근
+    for(let i=0; i<arr.length; i++){
+        //console.log(arr[i]);
+
+        let str = ''; //문자열 누적
+
+        //arr[i] 요소에 저장된 배열의 모든요소 접근
+        for(let x=0; x<arr[i].length; x++){
+            // arr[i].length : i번째 요소(배열)의 길이 
+            // -> 4,4,2 순서
+
+            str += `(${arr[i][x]}) `;
+
+
+        }
+        console.log(str); //한 줄 출력
+    }
+  }
+
+  /** 2차원 배열 확인 2 */
+function check8(){
+    /* 4행 4열짜리 2차원 배열에 0~99 사이 난수 배치 */
+  
+    // 배열 생성
+    const arr = [];
+
+    //난수를 2차원 배열에 대입
+  
+    for(let row=0 ; row<4 ; row++){//행 반복
+
+        arr[row]=[];// 행 생성
+  
+        for(let col=0 ; col<4 ; col++){//열 반복
+
+          //난수 생성
+          const randomNumber=Math.floor(Math.random()*100);
+
+          // 2차원 배열에 대입
+          arr[row][col] = randomNumber;
+  
+      }
+      
+    }
+
+  //콘솔창 입력용 2중 for문
+    for(let row = 0 ; row < arr.length ; row++){
+
+        let str = ' ';
+
+        for(let col = 0 ; col < arr[row].length ; col++){
+
+            str += `${arr[row][col]} `;
+        }
+
+        console.log(str);
+    
+      }
+    
+
+  
+    console.log(arr);
+
+    const search = Number(prompt('찾으려는 값 입력'))
+    
+    // 2차원 배열(arr) 내에서 입력 값(search) 찾기
+    for(let row = 0 ; row < arr.length ; row++){
+
+        for(let col = 0 ; col < arr[row].length ; col++){
+            if(arr[row][col]===search){
+                console.log(`${row}행 ${col}열에 ${search}가 존재합니다.`)
+            }
+        }
+
+  }
+  }
