@@ -72,3 +72,97 @@ function tagNameTest(){
       tagList[i].style.border = `3px solid ${tagList[i].innerText}`;
   }
 }
+
+/** name으로 요소 접근하기(취미 선택) */
+
+function nameTest(){
+
+    /* document.getElementsByName("name 속성값")
+        -> NodeList (유사 배열) 반환
+    */
+
+    //name 속성값이 "hobby"인 요소를 모두 얻어와 저장
+
+    const hobbyList = document.getElementsByName("hobby");
+
+    let str = ''; // 체크된 input의 value를 누적
+    let count = 0;// 체크된 input의 개수를 카운트
+
+
+    // i ==0,1,2,3,4,5 (길이는 6, 마지막 인덱스는 5(길이-1))
+    for(let i=0; i<hobbyList.length; i++){
+        /* 요소.checked -> checkbox, radio 타입 전용속성
+
+           요소.checked = true; -> 해당 요소 체크
+           요소.checked = false; -> 해당요소 체크 해제
+           요소.checked -> 체크여부 반환
+                            (체크O -> true, 체크X -> false)
+        */
+
+        // i번째 input 요소가 체크되어 있을 경우
+        if(hobbyList[i].checked === true){
+         console.log(hobbyList[i].value);
+         str+= `${hobbyList[i].value} `//value누적
+         count++ //count1 증가
+      }
+
+     } // for end
+
+        // 클래스가 name-div인 요소에 str, count 출력
+
+        // document.getElementsByClassName("name-div")
+        // -> 요소가 1개밖에 없어도 배열 형태로 반환
+
+        // -> 요소가 1개밖에 없음 == 0번 인덱스만 존재
+        // -> 0번 인덱스만 별도 변수에 저장해서 사용
+     const div = document.getElementsByClassName("name-div")[0];
+
+
+     div.innerHTML
+        = `${str} <br><br>선택된 취미 개수 : ${count}개`;
+}
+
+
+/** css 선택자로 요소 접근 */
+function cssTest1(){
+  
+    const container = document.querySelector('[target-div = css-div]')
+
+    container.style.width = "200px";
+    container.style.height = "200px";
+    container.style.border = "10px solid yellow"
+
+    // target-div 속성 값이 css-div인 요소의
+    // 자식 중 div 요소를 모두 선택해 얻어옴
+    const divs 
+     = document.querySelectorAll('[target-div = css-div]>div');
+
+    // i==0,1
+    for(let i=0; i<divs.length; i++){
+        divs[i].style.height = "50%";
+
+        divs[i].style.display = "flex";
+
+        divs[i].style.justifyContent = "center";
+
+        divs[i].style.alignItems = "center";
+    }
+
+    // index별로 배경색 따로 지정
+    divs[0].style.backgroundColor = "pink";
+    divs[1].style.backgroundColor = "skyblue";
+
+
+    //divs 사용하지 말고 
+    //test1이 작성된 요소를 선택해
+    //fontSize를 "30px"로 변경
+
+
+    /* querySelector */
+    // "[target-div = css-div] > div" 들 중에서
+    // 첫 번째 요소만 선택
+    const test1
+    = document.querySelector('[target-div = css-div]>div')
+
+    test1.style.fontSize = "30px"
+}
