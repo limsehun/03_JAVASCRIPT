@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10_배열</title>
+    <style>
+        #result6{
+            width: 300px;
+            height: 60px;
+            border: 3px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <H1>배열(Array)</H1>
@@ -75,6 +87,41 @@
     <h3>로또 번호 생성기</h3>
     <button onclick="check6()">번호 생성</button>
     <p id="result6"></p>
+
+    <hr>
+    <h2>점심 메뉴 뽑기</h2>
+    <div>
+        <h3>
+         오늘의 점심 : <span id="menuResult"></span>
+        </h3>
+        <button onclick="selectMenu()">점심 뽑기</button>
+    </div>
+
+    <hr>
+
+    <h1>2차원 배열(n차원 배열)</h1>
+
+    <pre>
+        -1차원 배열의 정의 : 뱐수를 묶음으로 다루는 것
+
+        ex) const arr = [1,2,3,4];
+
+        -2차원배열 : 1차원 배열을 묶음으로 다루는 것이
+        ex) const arr = [
+        [1,2,3,4],[5,6,7,8],[9,10,11,12]
+        ];
+
+        2차원 배열에서 index한개민 작성시
+        -> arr[0], arr[1], arr[2]
+           -> 해당 index의 1차원 배열 1개 선택(행 선택)
+
+        2차원 배열에서 index 2개 작성 시
+        -> arr[0][0], arr[0][1]
+            -> 해당 첫 번째 index의 1차원 배열에서
+             두 번째 index 요소 선택(열 선택)
+
+
+    </pre>
 
 
 

@@ -141,7 +141,27 @@ function check5() {
         const randomNumber
         =Math.floor(Math.random()*45)+1;
 
+        //  일단 배열에 난수 대입
         lotto[i] = randomNumber;
+
+        // -> 앞에 중복되는 숫자 있는지 확인
+        for (let x = 0; x < i; x++){
+            // 중복 검사
+            //i번째 저장하려는 값이 x번째에 존재하는가?
+            if ( lotto[x]===lotto[i] ){// 중복값이 존재함
+                // -> 있으면 현재 index에 머물기
+                
+                //난수를 저장하기 위한 index를 지정하는 i값을 1 감소
+                // -> 바깥쪽 for문의 증감 i++에 의해 다시 1 증가
+                // -> 결과적으로 i값 변화 X
+                i--; 
+                break;// 불필요한 중복검사 멈춤(효휼 UP)
+        
+            }
+        }
+
+        // -> 없으면 다음 index로 이동
+
     }
         //배열 내 숫자 정렬 방법
         lotto.sort(function(a,b) {
@@ -150,4 +170,37 @@ function check5() {
 
         console.log(lotto);
 
+        document.getElementById("result6").innerText = lotto;
+
  }
+
+ /** 점심 메뉴 뽑기 */
+function selectMenu(){
+
+    // 점심 메뉴로 초기화된 배열 생성
+    const menus = ["라면 + 김밥", "제육볶음","치즈 돈까스", "샐러드", "맘스터치", 
+        '알탕', '치킨', '파전', '짜장면', '김치찌개', '김밥', '우동'];
+        // menu 배열에서 랜덤으로 하나 뽑아서 화면의 #menuresultdp 출력
+       /* const arr = []; //빈 배열 생성
+
+        for(let i = menus; i <= 1; i){
+            
+            //0이상 leng 미만의 난수 발생
+            const randomNumber = Math.floor(Math.random()*12)+1;
+    
+            arr[i] = randomNumber;
+        }
+
+        console.log(menus[i]);
+
+        document.getElementById("menuResult").innerText = menus;*/
+
+        // 0부터 배열 길이 미만의 정수형 난수를 생성
+  const randomNumber
+  = Math.floor( Math.random() * menus.length );
+
+  //화면에 출력
+  document.getElementById("menuResult").innerText
+  =menus[randomNumber]
+
+  }
