@@ -65,6 +65,32 @@
             this == 클릭된 요소
     </pre>
 
+    <div class="my-btn1" onclick="check1(this)">
+        인라인 이벤트 모델 확인
+    </div>
+
+    <hr>
+
+    <h3>고전 이벤트 모델</h3>
+
+    <pre>
+        - HTML 요소에 이벤트 관련 코드를 직접 작성하지 않고
+          JS에서 DOM을 이용해 
+          원하는 요소에 이벤트 리스너/핸들러를 직접 작성하는 방법
+        * 단점 : 하나의 요소에 동일한 이벤트 리스너 작성 불가능
+                (마지막으로 작성한 이벤트리스너/핸들러 코드가 적용)
+                (덮어쓰기)
+
+    </pre>
+
+    <button id="test1a">고전 이벤트모델 확인</button>
+    <button id="test1b">고전 이벤트모델 제거</button>
+    <button id="test1c">고전 이벤트모델 단점 확인</button>
+
+    <hr>
+
+    <h1>표준 이벤트 모델( 요소.addEventListener() )</h1>
+
 
 
     <script src="../js/12_이벤트.js"></script>

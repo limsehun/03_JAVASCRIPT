@@ -1,0 +1,25 @@
+/*커스텀 버튼*/
+.my-btn1{
+    display: inline-block;
+    padding: 10px;
+    border: 3px solid rgb(48, 201, 244);
+    border-radius: 10px;
+
+    color: rgb(48, 201, 244);
+    font-weight: bold;
+    font-family: "견고딕";
+
+    user-select: none; /*블럭x*/
+
+    cursor: pointer;/*마우스 손가락 모양*/
+
+}
+
+.my-btn1:hover{
+    color: white;
+    background-color: rgb(48, 201, 244);
+}
+
+.my-btn1:active{
+    scale: 0.90;
+}
