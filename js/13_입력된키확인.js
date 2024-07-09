@@ -52,9 +52,29 @@ document.addEventListener("keyup", function(e){
       case 'r': index = 3; break;
       default: return;
     }
-  
-    //keys[index].style.backgroundColor = "white";
 
+    // keys[index].style.backgroundColor = "white";
+  
+    // 배경 이미지 제거
     keys[index].style.backgroundImage = "none";
-    keys[index].style.color = "rgba(0,0,0,1)";
-  });
+  
+    // 글자색 검정
+    keys[index].style.color = "rgba(0, 0, 0, 1)";
+});
+  
+
+/* 이미지가 마우스 따라 다니게 하기 */
+
+// 숨겨놓은 이미지
+const cursorImage = document.querySelector("#cursorImage");
+
+// 문서 전체에 "mousemove"(마우스가 움직였을 때) 감지 추가
+document.addEventListener("mousemove", function(e){
+
+    // console.log(e);
+    // e.pageX : 가로 방향 마우스 위치(왼쪽에 떨어진 px)
+    // e.pageY : 세로 방향 마우스 위치(위쪽에 떨어진 px)
+
+    cursorImage.style.left = `${e.pageX+10}px`;
+    cursorImage.style.top = `${e.pageY+20}px`;
+})
