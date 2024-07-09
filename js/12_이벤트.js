@@ -78,3 +78,76 @@ test1c.onclick = function(){
 test1c.onclick = function(){
     test1c.style.color = "green";
 };
+
+/* 표준 이벤트 모델 */
+
+/* [작성법] 
+  - 요소에 이벤트 리스너를 추가하는 형식
+
+  요소.addEventListener("이벤트종류",이벤트핸들러);
+
+  *이벤트 종류 : click, change, submit, keydown......
+
+  *이벤트 핸들러 : 감지되었을 때 수행할 함수
+*/
+
+const test2 = document.querySelector("#test2");
+
+/* #test2 클릭시 투명해지게 만들기 */
+test2.addEventListener("click",function (){
+    
+    // 투명도를 1 -> 0으로 0.05씩 감소
+    /*
+        -JS는 inline style로 작성된 CSS값만 읽어올 수 있다.
+        -JS는 inline style로만 CSS코드를 추가할 수 있다.
+    */
+    // 1) 현재 요소에 inline style로 작성된 투명도 얻어오기
+    let curr = test2.style.opacity;
+
+    console.log("curr : ",curr); // 처음에 빈칸('')
+
+    // 2)처음 클릭한 경우 curr에 1 대입
+    if(curr==='') curr=1;
+
+    // 3) 투명도를 0.05 낮춰서 대입
+    test2.style.opacity = curr -0.05;
+
+    // 4) 투명도가 음수가 되었을때 다시 1로 변경
+    if (test2.style.opacity < 0){
+        test2.style.opacity =1;
+    }
+
+})
+
+/* #test2 클릭시 숫자가 증가하는 이벤트 추가 */
+test2.addEventListener("click",function(){
+    //test2 요소에 내용을 1추가
+    test2.innerText++;
+});
+
+
+/* 배열 + 요소접근 방법 + 표준 이벤트 모델 */
+
+// 배경색이 변해야되는 요소
+const result = document.querySelector("#result3");
+
+// 버튼 모두 얻어오기 -> NodeList(유사 배열)
+// -> 각각의 index가 실제 HTML 버튼 요소
+// -> 버튼을 묶어서 저장한 배열 btns는 요소가 아님
+// -> 요소.addEventListener는 요소에만 사용가능
+const btns = document.querySelectorAll(".btn-container3 > button")
+
+// btns에 저장된 버튼 요소 하나씩 접근하기
+for(let i = 0 ; i < btns.length ; i++){
+
+    btns[i].addEventListener("click",function(){
+        //각 버튼에 작성된 내용 얻어오기
+        const color=btns[i].innerText;
+
+        //#result3의 배경색을 color 변수에 저장된 값으로 변경
+        result3.style.backgroundColor=color;
+
+    })
+
+    
+  }
