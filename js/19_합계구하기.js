@@ -43,6 +43,18 @@ addBtn.addEventListener("click",()=>{
     span.className = "remove-row";
     span.innerHTML = "&times;"; // HTML특수 문자는 innerHTML 이용
 
+    // *************************************
+    //x버튼(span)이 만들어 질 때
+    // 클릭 되었을 때 동작을 같이 정의해줌
+
+    span.addEventListener("click",()=>{
+        //클릭된x버튼의 부모(div.row)를 제거
+        span.parentElement.remove();
+    });
+
+
+    // *************************************
+
 
     // 4) 알맞게 조립 
     // - 요소.append(A,B,C) : 마지막 자식으로 추가
@@ -52,3 +64,15 @@ addBtn.addEventListener("click",()=>{
     // 5) 조립된 div를 .container의 마지막 자식으로 추가
     container.append(div);
 })
+
+// 페이지 로딩 시점에 존재하는 .remove-row를 모두 얻어오기
+// -> 처음에 x버튼이 없어서 아래 for문 실행 X
+
+// const xBtns = document.querySelectorAll(".remove-row");
+/*
+for(let i=0 ; i < xBtns.length ; i++){
+    xBtns[i].addEventListener("click", ()=>{
+    console.log("x클릭됨")
+    })
+}
+*/
